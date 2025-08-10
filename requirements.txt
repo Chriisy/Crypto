@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+ccxt
+pandas
+numpy
+scikit-learn
+lightgbm
+joblib
+pydantic==2.*
