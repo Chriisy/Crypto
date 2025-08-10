@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app/src
+      - TIMEFRAME=${TIMEFRAME:-15m}
+      - DAYS_HISTORY=${DAYS_HISTORY:-365}
+      - SYMBOLS=${SYMBOLS:-BTC/USDT,ETH/USDT}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN:-}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID:-}
+    volumes:
+      - ./models:/app/models
+    restart: unless-stopped
